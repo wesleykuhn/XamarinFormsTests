@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.Testes.Views.FrutaDetailsView"
+             x:Name="esta">
+
+    <Frame BindingContext="{x:Reference esta}"
+           Padding="10"
+           BorderColor="Black"
+           HasShadow="True"
+           CornerRadius="8">
+        <StackLayout>
+            <Label TextColor="Black" Text="{Binding Fruta.Id, StringFormat='Codigo: {0}'}" />
+            <Label TextColor="Black" Text="{Binding Fruta.Cor, StringFormat='Marca: {0}'}" />
+            <Image Source="https://www.ivegan.in/wp-content/uploads/2018/12/apple_green.jpg" />
+        </StackLayout>
+    </Frame>
+</ContentView>

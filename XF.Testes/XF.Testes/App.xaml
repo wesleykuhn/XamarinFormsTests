@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:XF.Testes.Models"
+             xmlns:customElements="clr-namespace:XF.Testes.CustomElements"
+             xmlns:views="clr-namespace:XF.Testes.Views"
+             x:Class="XF.Testes.App">
+    <Application.Resources>
+        <DataTemplate x:Key="carroTemplate" x:DataType="models:ListagemModel">
+            <views:CarroDetailsView Carro="{Binding Carro}" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="usuarioTemplate" x:DataType="models:ListagemModel">
+            <views:UsuarioDetailsView Usuario="{Binding Usuario}" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="frutaTemplate"
+                      x:DataType="models:ListagemModel">
+            <views:FrutaDetailsView Fruta="{Binding Fruta}" />
+        </DataTemplate>
+
+        <customElements:ListagemDataTemplateSelector x:Key="listagemDataTemplateSelector"
+                                                     CarroTemplate="{StaticResource carroTemplate}"
+                                                     UsuarioTemplate="{StaticResource usuarioTemplate}"
+                                                     FrutaTemplate="{StaticResource frutaTemplate}" />
+    </Application.Resources>
+</Application>

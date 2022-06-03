@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.Testes.Views.UsuarioDetailsView"
+             x:Name="esta">
+
+    <Frame BindingContext="{x:Reference esta}"
+           Padding="10"
+           BorderColor="Black"
+           HasShadow="True"
+           CornerRadius="8">
+        <StackLayout>
+            <Label TextColor="Black" Text="{Binding Usuario.Id, StringFormat='Codigo: {0}'}" />
+            <Label TextColor="Black" Text="{Binding Usuario.Name, StringFormat='Marca: {0}'}" />
+            <Grid ColumnDefinitions="Auto, *">
+                <Label Grid.Column="0" Text="CheckBox:" VerticalOptions="Center" TextColor="HotPink"/>
+                <CheckBox Grid.Column="1" VerticalOptions="Center"/>
+            </Grid>
+        </StackLayout>
+    </Frame>
+</ContentView>
